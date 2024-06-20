@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import {TailSpin} from 'react-loader-spinner'
+// import {TailSpin} from 'react-loader-spinner'
 
 import NewsItem from './NewsItem'
 import Pagination from './Pagination'
@@ -10,19 +10,19 @@ function ArticleCard({items}){
     //start 
     const [currentPage, setCurrentPage]  = useState(1)
     const [searchQuery, setSearchQuery] = useState('')
-    const [loading, setLoading] = useState(true)
+    // const [loading, setLoading] = useState(true)
     // const [favorites, setFavorites] =  useState([])
 
-    useEffect(()=>{
-        const fetchData = async ()=>{
-            setLoading(true)
+    // useEffect(()=>{
+    //     const fetchData = async ()=>{
+    //         setLoading(true)
 
-            await new Promise (resolve => setTimeout(resolve, 1000))
-            setLoading(false)
-        }
+    //         await new Promise (resolve => setTimeout(resolve, 1000))
+    //         setLoading(false)
+    //     }
 
-        fetchData();
-    }, [items])
+    //     fetchData();
+    // }, [items])
 
 
     //getting favourites 
@@ -63,23 +63,17 @@ function ArticleCard({items}){
         setCurrentPage(pageNumber)
     }
 
-    const inlineStyle ={
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        margin:'4em'
-    }
+    // const inlineStyle ={
+    //     display: 'flex',
+    //     flexDirection: 'column',
+    //     alignItems: 'center',
+    //     justifyContent: 'center',
+    //     margin:'4em'
+    // }
 
     return(
         <div className='news-articles-container'>
             <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} className="search-bar"/>
-
-            {loading ? (
-                <div style={inlineStyle}>
-                    <TailSpin color ="#0b69ff" height ={50} width={50}/>
-                </div>
-            ) : (
                 <div className='news-article'>
             {currentArticles.length > 0 ? (
                 currentArticles.map((item, i)=>(
@@ -91,8 +85,8 @@ function ArticleCard({items}){
                 <h1>No Articles Found</h1>
             </center>)}
         </div>
-            )}
-        {!loading && currentArticles.length > 0 && (
+         
+        {currentArticles.length > 0 && (
             <Pagination currentPage={currentPage} totalPages={totalPages} onChangePage={handlePageChange}/>
         )} 
     </div>

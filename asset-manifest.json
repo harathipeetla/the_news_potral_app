@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/the_news_potral_app/static/css/main.ca68ca23.css",
+    "main.js": "/the_news_potral_app/static/js/main.a13e6347.js",
+    "static/js/453.18d877a9.chunk.js": "/the_news_potral_app/static/js/453.18d877a9.chunk.js",
+    "index.html": "/the_news_potral_app/index.html",
+    "main.ca68ca23.css.map": "/the_news_potral_app/static/css/main.ca68ca23.css.map",
+    "main.a13e6347.js.map": "/the_news_potral_app/static/js/main.a13e6347.js.map",
+    "453.18d877a9.chunk.js.map": "/the_news_potral_app/static/js/453.18d877a9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ca68ca23.css",
+    "static/js/main.a13e6347.js"
+  ]
+}

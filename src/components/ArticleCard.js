@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-// import {TailSpin} from 'react-loader-spinner'
+import {useState } from 'react'
+
 
 import NewsItem from './NewsItem'
 import Pagination from './Pagination'
@@ -10,44 +10,7 @@ function ArticleCard({items}){
     //start 
     const [currentPage, setCurrentPage]  = useState(1)
     const [searchQuery, setSearchQuery] = useState('')
-    // const [loading, setLoading] = useState(true)
-    // const [favorites, setFavorites] =  useState([])
 
-    // useEffect(()=>{
-    //     const fetchData = async ()=>{
-    //         setLoading(true)
-
-    //         await new Promise (resolve => setTimeout(resolve, 1000))
-    //         setLoading(false)
-    //     }
-
-    //     fetchData();
-    // }, [items])
-
-
-    //getting favourites 
-
-    // useEffect(()=>{
-    //     const storedFavorites = JSON.parse(localStorage.getItem('favorites')) ||[]
-    //     setFavorites(storedFavorites)
-    // }, [])
-
-
-    //setting favourires 
-
-    // useEffect(()=>{
-    //     localStorage.setItem('favorites', JSON.stringify(favorites))
-    // }, [favorites])
-
-    //toggling the favourits 
-
-    // const toggleFavorite = (article)=>{
-    //     if(favorites.some(fav => fav.title === article.title)){
-    //         setFavorites(favorites.filter(fav => fav.title !== article.title))
-    //     }else{
-    //         setFavorites([...favorites, article])
-    //     }
-    // };
 
     const filteredArticles = items.filter(article => 
         article.source.name.toLowerCase().includes(searchQuery.toLocaleLowerCase()) || 
@@ -61,15 +24,7 @@ function ArticleCard({items}){
     const currentArticles = filteredArticles.slice(indexOfFirstArticle, indexOfLastArticle)
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber)
-    }
-
-    // const inlineStyle ={
-    //     display: 'flex',
-    //     flexDirection: 'column',
-    //     alignItems: 'center',
-    //     justifyContent: 'center',
-    //     margin:'4em'
-    // }
+    }
 
     return(
         <div className='news-articles-container'>
